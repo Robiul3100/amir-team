@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>আমির হাওলাদার টিম | RSF ROBIUL</title>
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        /* --- CSS VARIABLES (Light Colorful Theme) --- */
+        :root {
+            --bg-body: #FDFDFD;
+            --bg-card: #FFFFFF;
+            --bg-nav: rgba(255, 255, 255, 0.9);
+            --primary: #FF9F43;
+            --primary-dark: #E67E22;
+            --accent: #6C5CE7;
+            --text-main: #2D3436;
+            --text-muted: #636E72;
+            --border: #F1F2F6;
+            --radius-lg: 20px;
+            --radius-full: 99px;
+            --font-main: 'Hind Siliguri', sans-serif;
+            --shadow-card: 0 10px 25px rgba(0,0,0,0.04);
+            --transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        [data-theme="dark"] {
+            --bg-body: #0F0F0F;
+            --bg-card: #1A1A1A;
+            --bg-nav: rgba(15, 15, 15, 0.9);
+            --text-main: #FFFFFF;
+            --text-muted: #A0A0A0;
+            --border: #2A2A2A;
+            --shadow-card: 0 10px 30px rgba(0,0,0,0.3);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+        body { font-family: var(--font-main); background-color: var(--bg-body); color: var(--text-main); line-height: 1.6; padding-bottom: 100px; }
+
+        .container { max-width: 1000px; margin: 0 auto; padding: 0 20px; }
+
+        /* --- HEADER --- */
+        .header { position: sticky; top: 0; z-index: 900; background: var(--bg-nav); backdrop-filter: blur(12px); border-bottom: 1px solid var(--border); padding: 15px 0; }
+        .nav-wrapper { display: flex; justify-content: space-between; align-items: center; }
+        .logo { font-weight: 700; font-size: 1.2rem; display: flex; align-items: center; gap: 8px; }
+        .logo i { color: var(--primary); }
+        .theme-toggle { width: 40px; height: 40px; border-radius: 50%; border: 1px solid var(--border); display: grid; place-items: center; color: var(--text-main); }
+
+        /* --- ADVANCED HERO --- */
+        .hero { padding: 50px 0 20px; text-align: center; position: relative; overflow: hidden; }
+        .hero-bg { position: absolute; top: 0; left: 50%; transform: translateX(-50%); width: 100%; height: 100%; z-index: -1; opacity: 0.4; pointer-events: none; }
+        .badge { display: inline-block; padding: 6px 16px; background: rgba(255, 159, 67, 0.1); color: var(--primary-dark); border-radius: var(--radius-full); font-weight: 600; font-size: 0.9rem; margin-bottom: 20px; }
+        .hero h1 { font-size: 2.8rem; line-height: 1.2; margin-bottom: 20px; font-weight: 800; background: linear-gradient(135deg, var(--text-main), var(--primary)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .hero p { color: var(--text-muted); max-width: 600px; margin: 0 auto 30px; }
+        .cta-btn { background: var(--primary); text-decoration: none; color: #fff; padding: 12px 32px; border-radius: var(--radius-full); font-weight: 600; box-shadow: 0 8px 20px rgba(255, 159, 67, 0.3); display: inline-flex; align-items: center; gap: 10px; }
+
+        /* --- TEAM GRID (2 COLUMNS PERMANENT) --- */
+        .section-title { text-align: center; margin: 20px 0 20px; }
+        .team-grid { 
+            display: grid; 
+            grid-template-columns: repeat(2, 1fr); /* Always 2 columns as requested */
+            gap: 15px; 
+            margin-top: 20px; 
+        }
+
+        .profile-card {
+            position: relative; background: var(--bg-card); border-radius: var(--radius-lg);
+            margin-top: 50px; padding: 65px 15px 25px; text-align: center;
+            border: 1px solid var(--border); transition: var(--transition);
+            box-shadow: var(--shadow-card); cursor: pointer;
+        }
+
+        .profile-img-wrapper {
+            position: absolute; top: -50px; left: 50%; transform: translateX(-50%);
+            width: 100px; height: 100px; border-radius: 50%; padding: 5px;
+            background: var(--bg-body); z-index: 2; transition: var(--transition);
+        }
+        .profile-img { width: 100%; height: 100%; border-radius: 50%; object-fit: cover; background: #eee; }
+        
+        .profile-card:hover { transform: translateY(-5px); border-color: var(--primary); box-shadow: 0 15px 35px rgba(0,0,0,0.08); }
+        .profile-card:hover .profile-img-wrapper { transform: translateX(-50%) scale(1.05); }
+
+        .profile-name { font-size: 1.1rem; font-weight: 700; margin-bottom: 4px; }
+        .profile-role { font-size: 0.8rem; color: var(--primary); font-weight: 600; text-transform: uppercase; margin-bottom: 10px; }
+        
+        .profile-details { max-height: 0; overflow: hidden; opacity: 0; transition: var(--transition); font-size: 0.85rem; color: var(--text-muted); border-top: 1px solid transparent; }
+        .profile-card.active .profile-details { max-height: 150px; opacity: 1; margin-top: 15px; padding-top: 15px; border-top-color: var(--border); }
+
+        /* --- PROJECTS --- */
+        .projects-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 20px; margin-top: 40px; }
+        .project-card { background: var(--bg-card); border-radius: 15px; overflow: hidden; border: 1px solid var(--border); transition: var(--transition); }
+        .project-card:hover { transform: translateY(-5px); }
+        .project-thumb { width: 100%; aspect-ratio: 16/9; overflow: hidden; }
+        .project-thumb img { width: 100%; height: 100%; object-fit: cover; }
+        .project-body { padding: 20px; }
+        .btn-modal { width: 100%; padding: 10px; background: var(--border); border-radius: 8px; font-weight: 600; margin-top: 15px; transition: 0.3s; }
+        .btn-modal:hover { background: var(--primary); color: #fff; }
+
+        /* --- MODAL --- */
+        .modal-overlay { position: fixed; inset: 0; background: rgba(0,0,0,0.7); backdrop-filter: blur(5px); z-index: 2000; display: none; align-items: center; justify-content: center; padding: 20px; }
+        .modal-card { background: var(--bg-card); width: 100%; max-width: 500px; border-radius: 20px; overflow: hidden; animation: pop 0.3s ease; }
+        @keyframes pop { from { transform: scale(0.9); opacity: 0; } to { transform: scale(1); opacity: 1; } }
+        .modal-img { width: 100%; height: 200px; object-fit: cover; }
+        .modal-info { padding: 25px; }
+
+        /* --- MOBILE NAV --- */
+        .mobile-nav {
+            position: fixed; bottom: 20px; left: 50%; transform: translateX(-50%);
+            width: 90%; max-width: 400px; background: var(--bg-nav);
+            backdrop-filter: blur(20px); border: 1px solid var(--border);
+            border-radius: 50px; display: flex; justify-content: space-around;
+            align-items: center; padding: 10px; z-index: 1000; box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        .nav-item { font-size: 1.2rem; color: var(--text-muted); transition: 0.3s; }
+        .nav-item.active { color: var(--primary); }
+        
+        .nav-center {
+            width: 60px; height: 60px; background: var(--primary);
+            border-radius: 50%; display: flex; align-items: center;
+            justify-content: center; margin-top: -35px; border: 5px solid var(--bg-body);
+            box-shadow: 0 8px 15px rgba(255, 159, 67, 0.3);
+        }
+        .star-svg { width: 28px; height: 28px; fill: white; animation: spin 6s linear infinite; }
+        @keyframes spin { 100% { transform: rotate(360deg); } }
+
+        /* --- RESPONSIVE --- */
+        @media (max-width: 600px) {
+            .hero h1 { font-size: 2rem; }
+            .team-grid { gap: 15px; }
+            .profile-card { padding-top: 55px; }
+            .profile-img-wrapper { width: 85px; height: 85px; top: -42px; }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="header">
+        <div class="container nav-wrapper">
+            <div class="logo"><i class="fa-solid fa-crown"></i> আমির টিম</div>
+            <button class="theme-toggle" id="themeToggle"><i class="fa-solid fa-moon"></i></button>
+        </div>
+    </header>
+
+    <section class="hero" id="home">
+        <div class="container">
+            <span class="badge">কহেন কবি কুদাসাই প্রেজেন্টেড</span>
+            <h1>আমির হাওলাদার টিম</h1>
+            <p>আমরা শুধুমাত্র একটি টিম নই, আমরা একটি লক্ষ্য ফ্রেন্ড সার্কে। পদ্মজা উপন্যাসের অনুপ্রেরণায় আমাদের পথচলা।</p>
+            <a href="#" class="cta-btn">যুক্ত হোন <i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+    </section>
+
+    <section class="container" id="team">
+        <div class="section-title"><h2>আমির টিমের সব মেম্বারস</h2></div>
+        
+        <div class="team-grid">
+            <!-- Member 1 -->
+            <div class="profile-card" onclick="this.classList.toggle('active')">
+                <div class="profile-img-wrapper">
+                    <img src="https://cdn.jsdelivr.net/gh/Robiul3100/img-host@main/images/img_1770127524354.webp" class="profile-img">
+                </div>
+                <h3 class="profile-name">নীলিমা সেন</h3>
+                <p class="profile-role">টিম লিডার</p>
+                <div class="profile-details">শুরু থেকেই খুব ধৈর্যের সহিত এই টিমটাকে লিড করে আসছেন।</div>
+            </div>
+
+           <!-- Member 3 -->
+            <div class="profile-card" onclick="this.classList.toggle('active')">
+                <div class="profile-img-wrapper">
+                    <img src="https://cdn.jsdelivr.net/gh/Robiul3100/img-host@main/images/img_1770127912253.webp" class="profile-img">
+                </div>
+                <h3 class="profile-name">রবিউল ইদরিস</h3>
+                <p class="profile-role">এডিটর</p>
+                <div class="profile-details">ইনি তার বান্দ্রামি বুদ্ধি দিয়ে বিভিন্ন সময় টিমের সবাইকে বিনোদন দেন।</div>
+            </div>
+            
+            <!-- Member 2 -->
+            <div class="profile-card" onclick="this.classList.toggle('active')">
+                <div class="profile-img-wrapper">
+                    <img src="https://cdn.jsdelivr.net/gh/Robiul3100/img-host@main/images/img_1770127887869.jpg" class="profile-img">
+                </div>
+                <h3 class="profile-name">আমির হাওলাদার</h3>
+                <p class="profile-role">মডারেটর</p>
+                <div class="profile-details">ইনি কোনো কারন ছাড়াই চটে যান, কিন্তু নিজেও জানেন না কেন চটেছেন।</div>
+            </div>
+
+            <!-- Member 4 -->
+            <div class="profile-card" onclick="this.classList.toggle('active')">
+                <div class="profile-img-wrapper">
+                    <img src="https://cdn.jsdelivr.net/gh/Robiul3100/img-host@main/images/img_1770127568803.webp" class="profile-img">
+                </div>
+                <h3 class="profile-name">সারা খান</h3>
+                <p class="profile-role">ঝগুড়ী</p>
+                <div class="profile-details">টিমের উপ্রে আসা সকল হুমকি ইনি মুখের শব্দ বো/মা রুখে দাড়ান।</div>
+            </div>
+            <!-- Member 3 -->
+            <div class="profile-card" onclick="this.classList.toggle('active')">
+                <div class="profile-img-wrapper">
+                    <img src="https://cdn.jsdelivr.net/gh/Robiul3100/img-host@main/images/img_1770127532912.webp" class="profile-img">
+                </div>
+                <h3 class="profile-name">মিথিলা আপু</h3>
+                <p class="profile-role">সাপোর্টার</p>
+                <div class="profile-details">ইনার কাজ কি আমি নিজেও জানিনা</div>
+            </div>
+            <!-- Member 3 -->
+            <div class="profile-card" onclick="this.classList.toggle('active')">
+                <div class="profile-img-wrapper">
+                    <img src="https://cdn.jsdelivr.net/gh/Robiul3100/img-host@main/images/img_1770128049208.jpg" class="profile-img">
+                </div>
+                <h3 class="profile-name">আবরার ভাই</h3>
+                <p class="profile-role">কহেনের লোক</p>
+                <div class="profile-details">ইনি ইনার গুপ্তচরী বিদ্যা দিয়ে গ্রুপের সকল দুষ্টামি বাহিরে সাপ্লাই করেন</div>
+            </div>
+            <!-- Member 3 -->
+            <div class="profile-card" onclick="this.classList.toggle('active')">
+                <div class="profile-img-wrapper">
+                    <img src="https://cdn.jsdelivr.net/gh/Robiul3100/img-host@main/images/img_1770127540981.webp" class="profile-img">
+                </div>
+                <h3 class="profile-name">ইশু পাখি</h3>
+                <p class="profile-role">খালাম্মা</p>
+                <div class="profile-details">ইনি সবার নানীজান</div>
+            </div>
+            <!-- Member 3 -->
+            <div class="profile-card" onclick="this.classList.toggle('active')">
+                <div class="profile-img-wrapper">
+                    <img src="https://cdn.jsdelivr.net/gh/Robiul3100/img-host@main/images/img_1770128049208.jpg" class="profile-img">
+                </div>
+                <h3 class="profile-name">ফাওজিয়া আঞ্জাবিন দুয়া</h3>
+                <p class="profile-role">সিলোডি</p>
+                <div class="profile-details">ইনার কাজ কি আমি নিজেও জানিনা</div>
+            </div>
+            <!-- Member 3 -->
+            <div class="profile-card" onclick="this.classList.toggle('active')">
+                <div class="profile-img-wrapper">
+                    <img src="https://cdn.jsdelivr.net/gh/Robiul3100/img-host@main/images/img_1770127957217.webp" class="profile-img">
+                </div>
+                <h3 class="profile-name">হুমাইরা জেরী</h3>
+                <p class="profile-role">ইতর</p>
+                <div class="profile-details">ইনি িনার ইতরামি দিয়ে গ্রুপ মাতিয়ে রাখেন।</div>
+            </div>
+             <!-- Member 3 -->
+            <div class="profile-card" onclick="this.classList.toggle('active')">
+                <div class="profile-img-wrapper">
+                    <img src="https://cdn.jsdelivr.net/gh/Robiul3100/img-host@main/images/img_1770128049208.jpg" class="profile-img">
+                </div>
+                <h3 class="profile-name">নিশা</h3>
+                <p class="profile-role">ইতরের বান্ধুপি</p>
+                <div class="profile-details">ইনি িনার বান্ধুপির সাথে ইতরামি করেন।</div>
+            </div>
+             <!-- Member 3 -->
+            <div class="profile-card" onclick="this.classList.toggle('active')">
+                <div class="profile-img-wrapper">
+                    <img src="https://cdn.jsdelivr.net/gh/Robiul3100/img-host@main/images/img_1770128049208.jpg" class="profile-img">
+                </div>
+                <h3 class="profile-name">রুপালী আপা</h3>
+                <p class="profile-role">গ্রুপ এডমিন</p>
+                <div class="profile-details">ইনি আসলে কি কাজ করেন, জানিনা।।</div>
+            </div>
+             <!-- Member 3 -->
+            <div class="profile-card" onclick="this.classList.toggle('active')">
+                <div class="profile-img-wrapper">
+                    <img src="https://cdn.jsdelivr.net/gh/Robiul3100/img-host@main/images/img_1770128049208.jpg" class="profile-img">
+                </div>
+                <h3 class="profile-name">মাহদিবা খান মেঘ</h3>
+                <p class="profile-role">ভদ্র মহিলা</p>
+                <div class="profile-details">ইনি ইনার পালিত কুমির দিয়ে গ্রুপের সবাইকে ভয় দেখান।</div>
+            </div>
+        </div>
+    </section>
+
+    <section class="container" id="projects">
+        <div class="section-title"><h2>প্রজেক্টস</h2></div>
+        <div class="projects-grid">
+            <div class="project-card">
+                <div class="project-thumb"><img src="https://placehold.co/600x400/FF9F43/fff?text=Design+1"></div>
+                <div class="project-body">
+                    <h3>বুক কভার ডিজাইন</h3>
+                    <button class="btn-modal" onclick="openModal('বুক কভার ডিজাইন', 'এটি পদ্মজা উপন্যাসের জন্য তৈরি করা একটি এক্সক্লুসিভ ডিজিটাল আর্ট।', 'https://placehold.co/600x400/FF9F43/fff?text=Design+1')">বিস্তারিত</button>
+                </div>
+            </div>
+            <div class="project-card">
+                <div class="project-thumb"><img src="https://placehold.co/600x400/6C5CE7/fff?text=Event+2"></div>
+                <div class="project-body">
+                    <h3>সাহিত্য আড্ডা ২০২৪</h3>
+                    <button class="btn-modal" onclick="openModal('সাহিত্য আড্ডা ২০২৪', 'টিমের সকল সদস্যদের নিয়ে আয়োজিত বার্ষিক মিলনমেলা।', 'https://placehold.co/600x400/6C5CE7/fff?text=Event+2')">বিস্তারিত</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <nav class="mobile-nav">
+        <a href="#home" class="nav-item active"><i class="fa-solid fa-house"></i></a>
+        <a href="#team" class="nav-item"><i class="fa-solid fa-users"></i></a>
+        <div class="nav-center">
+            <svg class="star-svg" viewBox="0 0 24 24"><path d="M12 .587l3.668 7.568 8.332 1.151-6.064 5.828 1.48 8.279-7.416-3.967-7.417 3.967 1.481-8.279-6.064-5.828 8.332-1.151z"/></svg>
+        </div>
+        <a href="#projects" class="nav-item"><i class="fa-solid fa-briefcase"></i></a>
+        <a href="#" class="nav-item" onclick="window.scrollTo(0,0)"><i class="fa-solid fa-up-long"></i></a>
+    </nav>
+
+    <div class="modal-overlay" id="modal">
+        <div class="modal-card">
+            <img src="" id="modalImg" class="modal-img">
+            <div class="modal-info">
+                <h2 id="modalTitle"></h2>
+                <p id="modalDesc" style="margin: 15px 0; color: var(--text-muted);"></p>
+                <button class="cta-btn" style="width: 100%; justify-content: center;" onclick="closeModal()">বন্ধ করুন</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Modal Logic
+        function openModal(title, desc, img) {
+            document.getElementById('modalTitle').innerText = title;
+            document.getElementById('modalDesc').innerText = desc;
+            document.getElementById('modalImg').src = img;
+            document.getElementById('modal').style.display = 'flex';
+        }
+        function closeModal() {
+            document.getElementById('modal').style.display = 'none';
+        }
+
+        // Theme Toggle
+        const btn = document.getElementById('themeToggle');
+        let dark = false;
+        btn.onclick = () => {
+            dark = !dark;
+            document.documentElement.setAttribute('data-theme', dark ? 'dark' : 'light');
+            btn.innerHTML = dark ? '<i class="fa-solid fa-sun"></i>' : '<i class="fa-solid fa-moon"></i>';
+        };
+
+        // Scroll Logic
+        window.onclick = (e) => { if(e.target.id == 'modal') closeModal(); }
+    </script>
+</body>
+</html>
