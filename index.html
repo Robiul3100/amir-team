@@ -19,9 +19,9 @@
     <meta name="description" content=" হাওলাদার টিম মেম্বার | Developed by RSF ROBIUL.">
     <meta name="theme-color" content="#0d522c">
     
-    <meta property="og:title" content="হাওলাদার টিম মেম্বার">
+    <meta property="og:title" content="একনজরে হাওলাদার টিম মেম্বার">
     <meta property="og:description" content="একনজরে পুরো হাওলাদার টিম! দেখুন কুমির টিমে কারা কারা ছিলো!">
-    <meta property="og:image" content="https://cdn.jsdelivr.net/gh/Robiul3100/img-host@main/images/img_1769707751107.webp">
+    <meta property="og:image" content="https://cdn.jsdelivr.net/gh/Robiul3100/img-host@main/images/img_1770165990546.webp">
     <meta name="twitter:card" content="summary_large_image">
     <style>
         /* --- CSS VARIABLES (Light Colorful Theme) --- */
@@ -38,7 +38,7 @@
             --radius-lg: 20px;
             --radius-full: 99px;
             --font-main: 'Hind Siliguri', sans-serif;
-            --shadow-card: 0 10px 25px rgba(0,0,0,0.04);
+            --shadow-card: 0 10px 25px rgba(0,0,0,0.08);
             --transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
@@ -58,61 +58,58 @@
         .container { max-width: 1000px; margin: 0 auto; padding: 0 20px; }
 
         /* --- HEADER --- */
-        .header { position: sticky; top: 0; z-index: 900; background: var(--bg-nav); backdrop-filter: blur(12px); border-bottom: 1px solid var(--border); padding: 15px 0; }
+        .header { position: sticky; top: 0; z-index: 900; background: var(--bg-nav); backdrop-filter: blur(12px); border-radius:0px 0px 20px 20px; border-bottom: 1px solid var(--primary); padding: 12px 0; }
         .nav-wrapper { display: flex; justify-content: space-between; align-items: center; }
-        .logo { font-weight: 700; font-size: 1.2rem; display: flex; align-items: center; gap: 8px; }
+        .logo { font-weight: 700; background-color:transparent; font-size: 1.2rem; display: flex; align-items: center; gap: 8px; }
         .logo i { color: var(--primary); }
         .theme-toggle { width: 40px; height: 40px; border-radius: 50%; border: 1px solid var(--border); display: grid; place-items: center; color: var(--text-main); }
+        .r__r{background: #004DFF;background: linear-gradient(to top, #006cff 0%, #ff00c7 100%);-webkit-background-clip: text;-webkit-text-fill-color: transparent;text-align:center;}
 
         /* --- ADVANCED HERO --- */
-        .hero { padding: 50px 0 20px; text-align: center; position: relative; overflow: hidden; }
+        .hero { padding: 5px 0 10px; text-align: center; position: relative; overflow: hidden; }
         .hero-bg { position: absolute; top: 0; left: 50%; transform: translateX(-50%); width: 100%; height: 100%; z-index: -1; opacity: 0.4; pointer-events: none; }
-        .badge { display: inline-block; padding: 6px 16px; background: rgba(255, 159, 67, 0.1); color: var(--primary-dark); border-radius: var(--radius-full); font-weight: 600; font-size: 0.9rem; margin-bottom: 20px; }
-        .hero h1 { font-size: 2.8rem; line-height: 1.2; margin-bottom: 20px; font-weight: 800; background: linear-gradient(135deg, var(--text-main), var(--primary)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-        .hero p { color: var(--text-muted); max-width: 600px; margin: 0 auto 30px; }
-        .cta-btn { background: var(--primary); text-decoration: none; color: #fff; padding: 12px 32px; border-radius: var(--radius-full); font-weight: 600; box-shadow: 0 8px 20px rgba(255, 159, 67, 0.3); display: inline-flex; align-items: center; gap: 10px; }
-
+        .badge { display: inline-block; padding: 6px 16px; background: rgba(255, 159, 67, 0.1); color: var(--primary-dark); border-radius: var(--radius-full); font-weight: 600; font-size: 0.9rem; margin-bottom: 10px; }
+        .hero h1 { font-size: 2.8rem; line-height: 1.2; margin-bottom: 6px; font-weight: 800; background: #004DFF;background: linear-gradient(to top, #996515 0%, #FFCC00 100%);-webkit-background-clip: text;-webkit-text-fill-color: transparent; }
+        .hero p { color: var(--text-muted); max-width: 600px; margin: 0 auto 10px; }
+   
         /* --- TEAM GRID (2 COLUMNS PERMANENT) --- */
-        .section-title { text-align: center; margin: 20px 0 20px; }
-        .team-grid { 
-            display: grid; 
-            grid-template-columns: repeat(2, 1fr); /* Always 2 columns as requested */
-            gap: 15px; 
-            margin-top: 20px; 
-        }
-
+        .section-title { text-align: center; margin: 10px 0 10px;border-radius:50px; border-bottom:2px solid var(--primary);}
+        .team-grid {display: grid;grid-template-columns: repeat(2, 1fr); gap: 15px;margin-top: 10px; }
         .profile-card {
-            position: relative; background: var(--bg-card); border-radius: var(--radius-lg);
-            margin-top: 50px; padding: 65px 15px 25px; text-align: center;
-            border: 1px solid var(--border); transition: var(--transition);
-            box-shadow: var(--shadow-card); cursor: pointer;
-        }
+         position: relative; background: var(--bg-card); border-radius: var(--radius-lg);
+         margin-top: 50px; padding: 65px 10px 10px; text-align: center;
+         border: 1px solid var(--primary); transition: var(--transition);
+         box-shadow: var(--shadow-card); cursor: pointer; }
 
         .profile-img-wrapper {
-            position: absolute; top: -50px; left: 50%; transform: translateX(-50%);
-            width: 100px; height: 100px; border-radius: 50%; padding: 5px;
-            background: var(--bg-body); z-index: 2; transition: var(--transition);
-        }
-        .profile-img { width: 100%; height: 100%; border-radius: 50%; object-fit: cover; background: #eee; }
-        
-        .profile-card:hover { transform: translateY(-5px); border-color: var(--primary); box-shadow: 0 15px 35px rgba(0,0,0,0.08); }
-        .profile-card:hover .profile-img-wrapper { transform: translateX(-50%) scale(1.05); }
+         position: absolute; top: -50px; left: 50%; transform: translateX(-50%);
+         width: 100px; height: 100px; border-radius: 50%; border: 1px solid var(--border); padding: 2px;
+         background: var(--bg-body); z-index: 2; transition: var(--transition); }
 
-        .profile-name { font-size: 1.1rem; font-weight: 700; margin-bottom: 4px; }
-        .profile-role { font-size: 0.8rem; color: var(--primary); font-weight: 600; text-transform: uppercase; margin-bottom: 10px; }
-        
+        .profile-img { width: 100%; height: 100%; border-radius: 50%; border: 1px solid var(--primary); object-fit: cover; background: #eee; }
+        .profile-card:hover { transform: translateY(-5px); border-color: var(--border); box-shadow: 0 15px 35px rgba(0,0,0,0.08); }
+        .profile-card:hover .profile-img-wrapper { transform: translateX(-50%) scale(1.05); }
+        .profile-name { font-size: 1.1rem; font-weight: 700; margin-bottom: 3px; }
+        .profile-role { font-size: 0.8rem; color: var(--primary); font-weight: 600; text-transform: uppercase; margin-bottom: 1px; }
+        .profile-small{ font-size: 0.6rem; color: var(--text-muted); font-weight: 500; text-transform: uppercase; margin-bottom: 1px; }
         .profile-details { max-height: 0; overflow: hidden; opacity: 0; transition: var(--transition); font-size: 0.85rem; color: var(--text-muted); border-top: 1px solid transparent; }
         .profile-card.active .profile-details { max-height: 150px; opacity: 1; margin-top: 15px; padding-top: 15px; border-top-color: var(--border); }
 
         /* --- PROJECTS --- */
-        .projects-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 20px; margin-top: 40px; }
-        .project-card { background: var(--bg-card); border-radius: 15px; overflow: hidden; border: 1px solid var(--border); transition: var(--transition); }
-        .project-card:hover { transform: translateY(-5px); }
-        .project-thumb { width: 100%; aspect-ratio: 16/9; overflow: hidden; }
+        .projects-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 10px; margin-top: 10px; }
+        .project-card { background: var(--bg-card); border-radius: 15px; overflow: hidden; border: 1px solid var(--primary); transition: var(--transition); }
+        .project-card:hover { transform: translateY(-2px); }
+        .project-thumb { width: 100%; aspect-ratio: 16/9; overflow: hidden; border-radius:10px; border-bottom:3px solid var(--primary); }
         .project-thumb img { width: 100%; height: 100%; object-fit: cover; }
-        .project-body { padding: 20px; }
-        .btn-modal { width: 100%; padding: 10px; background: var(--border); border-radius: 8px; font-weight: 600; margin-top: 15px; transition: 0.3s; }
-        .btn-modal:hover { background: var(--primary); color: #fff; }
+        .project-body { padding: 10px; }
+        .btn-modal { width: 100%; padding: 10px; background: var(--primary); border-radius: 8px; font-weight: 600; margin-top: 5px; transition: 0.3s; }
+        .btn-modal:hover { background: var(--border); color: #fff; }
+
+        /* COUNTER */
+        .stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px;margin:5px auto}
+        .stat{background:var(--bg-card);border:1px solid var(--primary);border-radius:var(--radius-lg);padding:7px;text-align:center}
+        .stat h2{font-size:1.5rem;color:var(--primary)}
+        .stat span{font-size:.7rem;color:var(--text-muted)}
 
         /* --- MODAL --- */
         .modal-overlay { position: fixed; inset: 0; background: rgba(0,0,0,0.7); backdrop-filter: blur(5px); z-index: 2000; display: none; align-items: center; justify-content: center; padding: 20px; }
@@ -123,12 +120,11 @@
 
         /* --- MOBILE NAV --- */
         .mobile-nav {
-            position: fixed; bottom: 20px; left: 50%; transform: translateX(-50%);
-            width: 90%; max-width: 400px; background: var(--bg-nav);
-            backdrop-filter: blur(20px); border: 1px solid var(--border);
-            border-radius: 50px; display: flex; justify-content: space-around;
-            align-items: center; padding: 10px; z-index: 1000; box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-        }
+            position: fixed; bottom: 0px; left: 50%; transform: translateX(-50%);
+            width: 100%; max-width: 400px; background: var(--bg-nav);
+            backdrop-filter: blur(20px); border: 1px solid var(--primary);
+            border-radius: 20px 20px 0px 0px; display: flex; justify-content: space-around;
+            align-items: center; padding: 10px; z-index: 1000; box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
         .nav-item { font-size: 1.2rem; color: var(--text-muted); transition: 0.3s; }
         .nav-item.active { color: var(--primary); }
         
@@ -148,13 +144,57 @@
             .profile-card { padding-top: 55px; }
             .profile-img-wrapper { width: 85px; height: 85px; top: -42px; }
         }
-    </style>
+        .rsf{ background-image: -webkit-linear-gradient(left, #B8860B, #FFCC00, #D4AF37,#B8860B, #996515);
+        -webkit-animation: animatedBackground_a 5s linear infinite alternate;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: #0000;
+         background-clip: text; }
+         @keyframes animatedBackground_a {
+         0% { background-position: 0 0 }
+         100% { background-position: -500px 0 }}
+
+        .btn-container{width:100%;max-width:600px}
+        .shining-btn{display:block;width:100%;padding:10px;font-size:14px;font-weight:800;text-align:center;text-decoration:none;color:#000;border-radius:10px;position:relative;overflow:hidden;background:linear-gradient(180deg,#fff 0%,#fff 80%,#ffae00 100%);background-size:200% auto;box-shadow:0 10px 20px rgba(255,140,0,0.3);border:2px solid var(--primary);cursor:pointer;transition:transform 0.3s ease,box-shadow 0.3s ease;text-transform:uppercase;letter-spacing:1px}
+         @keyframes sweep{0%{left:-110%}50%{left:150%}100%{left:150%}}
+        .shining-btn::before{content:'';position:absolute;top:0;left:-110%;width:100%;height:100%;background:linear-gradient(to right,rgba(255,255,255,0) 0%,rgba(255,255,255,0.8) 50%,rgba(255,255,255,0) 100%);transform:skewX(-30deg);animation:sweep 3s infinite ease-in-out}
+         .shining-btn:hover{transform:scale(1.02);box-shadow:0 15px 30px rgba(255,140,0,0.4);background-position:right center}
+        .shining-btn:active{transform:scale(0.98)}
+
+
+/* 💸 AD INJECTION STYLES */
+        .native-ad-container {
+            grid-column: 1 / -1;
+            background: #000;
+            border: 1px dashed var(--border);
+            border-radius: 10px;
+            padding: 10px;
+            width:80%;
+            text-align: center;
+            min-height: 120px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+        }
+        
+        .ad-badge {
+            background: #F5A623;
+            color: black;
+            font-size: 10px;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-weight: 700;
+            margin-bottom: 8px;
+            text-transform: uppercase;
+        }
+  </style>
+ 
 </head>
 <body>
 
     <header class="header">
         <div class="container nav-wrapper">
-            <div class="logo"><i class="fa-solid fa-crown"></i> আমির টিম</div>
+            <div class="logo r__r"><i class="fa-solid fa-crown"></i> আমির হাওলাদার টিম</div>
             <button class="theme-toggle" id="themeToggle"><i class="fa-solid fa-moon"></i></button>
         </div>
     </header>
@@ -163,13 +203,27 @@
         <div class="container">
             <span class="badge">কহেন কবি কুদাসাই প্রেজেন্টেড</span>
             <h1>আমির হাওলাদার টিম</h1>
-            <p>আমরা শুধুমাত্র একটি টিম নই, আমরা একটি লক্ষ্য ফ্রেন্ড সার্কে। পদ্মজা উপন্যাসের অনুপ্রেরণায় আমাদের পথচলা।</p>
-            <a href="https://www.facebook.com/groups/1433381333925418/" class="cta-btn">যুক্ত হোন <i class="fa-solid fa-arrow-right"></i></a>
-        </div>
+            <p>আমরা শুধুমাত্র একটি টিম নই, আমরা একটি ফ্রেন্ড সার্কেল। পদ্মজা উপন্যাসের অনুপ্রেরণায় আমাদের পথচলা।</p>
+            <div class="btn-container">
+
+        <a href="https://yourlink.com" target="_blank" class="shining-btn">
+            এখনি জয়েন করুন
+        </a>
+    </div>
+          </div>
     </section>
+    
+<section class="container">
+<div class="stats">
+<div class="stat"><h2 data-count="1200">0</h2><span>মোট মেম্বার</span></div>
+<div class="stat"><h2 data-count="4500">0</h2><span>মোট ভোট</span></div>
+<div class="stat"><h2 data-count="500">0</h2><span>মোট এক্টিভ মেম্বার</span></div>
+<div class="stat"><h2 data-count="20">0</h2><span>মোট ইভেন্ট</span></div>
+</div>
+</section>
 
     <section class="container" id="team">
-        <div class="section-title"><h2>আমির টিমের সব মেম্বারস</h2></div>
+        <div class="section-title r__r"><h2>হাওলাদার টিমের সব মেম্বারস</h2></div>
         
         <div class="team-grid">
             <!-- Member 1 -->
@@ -177,8 +231,9 @@
                 <div class="profile-img-wrapper">
                     <img src="https://cdn.jsdelivr.net/gh/Robiul3100/img-host@main/images/img_1770127524354.webp" class="profile-img">
                 </div>
-                <h3 class="profile-name">নীলিমা সেন</h3>
+                <h3 class="profile-name rsf">নীলিমা সেন</h3>
                 <p class="profile-role">টিম লিডার</p>
+                <span class="profile-small"> বিস্তারিত</span>
                 <div class="profile-details">শুরু থেকেই খুব ধৈর্যের সহিত এই টিমটাকে লিড করে আসছেন।</div>
             </div>
 
@@ -187,9 +242,21 @@
                 <div class="profile-img-wrapper">
                     <img src="https://cdn.jsdelivr.net/gh/Robiul3100/img-host@main/images/img_1770127912253.webp" class="profile-img">
                 </div>
-                <h3 class="profile-name">রবিউল ইদরিস</h3>
-                <p class="profile-role">এডিটর</p>
+                <h3 class="profile-name rsf">রবিউল ইদরিস</h3>
+                <p class="profile-role">এডিটর/ডেভেলপার</p>
+                <span class="profile-small"> বিস্তারিত</span>
                 <div class="profile-details">ইনি তার বান্দ্রামি বুদ্ধি দিয়ে বিভিন্ন সময় টিমের সবাইকে বিনোদন দেন।</div>
+            </div>
+            
+            <!-- Member 2 -->
+            <div class="profile-card" onclick="this.classList.toggle('active')">
+                <div class="profile-img-wrapper">
+                    <img src="https://cdn.jsdelivr.net/gh/Robiul3100/img-host@main/images/img_1770157396181.webp" class="profile-img">
+                </div>
+                <h3 class="profile-name rsf">হাকিবুল ইসলাম</h3>
+                <p class="profile-role">গ্রুপ এক্সপার্ট</p>
+                <span class="profile-small"> বিস্তারিত</span>
+                <div class="profile-details">ইনি অফলাইন প্রচারণায় সবচেয়ে বেশি হেল্প করছেন।</div>
             </div>
             
             <!-- Member 2 -->
@@ -197,8 +264,9 @@
                 <div class="profile-img-wrapper">
                     <img src="https://cdn.jsdelivr.net/gh/Robiul3100/img-host@main/images/img_1770127887869.jpg" class="profile-img">
                 </div>
-                <h3 class="profile-name">আমির হাওলাদার</h3>
+                <h3 class="profile-name rsf">রাফি</h3>
                 <p class="profile-role">মডারেটর</p>
+                <span class="profile-small"> বিস্তারিত</span>
                 <div class="profile-details">ইনি কোনো কারন ছাড়াই চটে যান, কিন্তু নিজেও জানেন না কেন চটেছেন।</div>
             </div>
 
@@ -207,71 +275,110 @@
                 <div class="profile-img-wrapper">
                     <img src="https://cdn.jsdelivr.net/gh/Robiul3100/img-host@main/images/img_1770127568803.webp" class="profile-img">
                 </div>
-                <h3 class="profile-name">সারা খান</h3>
+                <h3 class="profile-name rsf">সারা খান</h3>
                 <p class="profile-role">ঝগুড়ী</p>
+                <span class="profile-small"> বিস্তারিত</span>
                 <div class="profile-details">টিমের উপ্রে আসা সকল হুমকি ইনি মুখের শব্দ বো/মা রুখে দাড়ান।</div>
             </div>
             <!-- Member 3 -->
             <div class="profile-card" onclick="this.classList.toggle('active')">
                 <div class="profile-img-wrapper">
-                    <img src="https://cdn.jsdelivr.net/gh/Robiul3100/img-host@main/images/img_1770127532912.webp" class="profile-img">
+                    <img src="https://cdn.jsdelivr.net/gh/Robiul3100/img-host@main/images/img_1770158730073.webp" class="profile-img">
                 </div>
-                <h3 class="profile-name">মিথিলা আপু</h3>
+                <h3 class="profile-name rsf">মিথিলা আপু</h3>
                 <p class="profile-role">সাপোর্টার</p>
+                <span class="profile-small"> বিস্তারিত</span>
                 <div class="profile-details">ইনার কাজ কি আমি নিজেও জানিনা</div>
             </div>
-            <!-- Member 3 -->
+            
+             <!-- Member 3 -->
             <div class="profile-card" onclick="this.classList.toggle('active')">
                 <div class="profile-img-wrapper">
-                    <img src="https://cdn.jsdelivr.net/gh/Robiul3100/img-host@main/images/img_1770128049208.jpg" class="profile-img">
+                    <img src="https://cdn.jsdelivr.net/gh/Robiul3100/img-host@main/images/img_1770127957217.webp" class="profile-img">
                 </div>
-                <h3 class="profile-name">আবরার ভাই</h3>
-                <p class="profile-role">কহেনের লোক</p>
-                <div class="profile-details">ইনি ইনার গুপ্তচরী বিদ্যা দিয়ে গ্রুপের সকল দুষ্টামি বাহিরে সাপ্লাই করেন</div>
+                <h3 class="profile-name rsf">হুমাইরা জেরী</h3>
+                <p class="profile-role">ইতর</p>
+                <span class="profile-small"> বিস্তারিত</span>
+                <div class="profile-details">ইনি ইনার ইতরামি দিয়ে গ্রুপ মাতিয়ে রাখেন।</div>
             </div>
             <!-- Member 3 -->
             <div class="profile-card" onclick="this.classList.toggle('active')">
                 <div class="profile-img-wrapper">
                     <img src="https://cdn.jsdelivr.net/gh/Robiul3100/img-host@main/images/img_1770127540981.webp" class="profile-img">
                 </div>
-                <h3 class="profile-name">ইশু পাখি</h3>
+                <h3 class="profile-name rsf">ইশু পাখি</h3>
                 <p class="profile-role">খালাম্মা</p>
+                <span class="profile-small"> বিস্তারিত</span>
                 <div class="profile-details">ইনি সবার নানীজান</div>
             </div>
             <!-- Member 3 -->
             <div class="profile-card" onclick="this.classList.toggle('active')">
                 <div class="profile-img-wrapper">
-                    <img src="https://cdn.jsdelivr.net/gh/Robiul3100/img-host@main/images/img_1770128049208.jpg" class="profile-img">
+                    <img src="https://cdn.jsdelivr.net/gh/Robiul3100/img-host@main/images/img_1770163236513.webp" class="profile-img">
                 </div>
-                <h3 class="profile-name">ফাওজিয়া আঞ্জাবিন দুয়া</h3>
-                <p class="profile-role">সিলোডি</p>
-                <div class="profile-details">ইনার কাজ কি আমি নিজেও জানিনা</div>
+                <h3 class="profile-name rsf">নিশা</h3>
+                <p class="profile-role">মডারেটর</p>
+                <span class="profile-small"> বিস্তারিত</span>
+                <div class="profile-details">ইনি একজন প্রাপ্ত বয়স্ক অবিবাহিতা ভাল্লুক, ইনার একমাত্র প্রিয় খাবার হলো বাঁশ।</div>
             </div>
             <!-- Member 3 -->
             <div class="profile-card" onclick="this.classList.toggle('active')">
                 <div class="profile-img-wrapper">
-                    <img src="https://cdn.jsdelivr.net/gh/Robiul3100/img-host@main/images/img_1770127957217.webp" class="profile-img">
+                    <img src="https://cdn.jsdelivr.net/gh/Robiul3100/img-host@main/images/img_1770163978639.webp" class="profile-img">
                 </div>
-                <h3 class="profile-name">হুমাইরা জেরী</h3>
-                <p class="profile-role">ইতর</p>
-                <div class="profile-details">ইনি িনার ইতরামি দিয়ে গ্রুপ মাতিয়ে রাখেন।</div>
+                <h3 class="profile-name rsf">সাদনান আহমেদ</h3>
+                <p class="profile-role">অকামিলা বেকার</p>
+                <span class="profile-small"> বিস্তারিত</span>
+                <div class="profile-details">ইনি আসলে কি ছিড়তে গ্রুপে আছে, ইনি নিজেও জানেন না।</div>
+            </div>
+            <!-- Member 3 -->
+            <div class="profile-card" onclick="this.classList.toggle('active')">
+                <div class="profile-img-wrapper">
+                    <img src="https://cdn.jsdelivr.net/gh/Robiul3100/img-host@main/images/img_1770128049208.jpg" class="profile-img">
+                </div>
+                <h3 class="profile-name rsf">ফাওজিয়া আঞ্জাবিন</h3>
+                <p class="profile-role">সিলোডি</p>
+                <span class="profile-small"> বিস্তারিত</span>
+                <div class="profile-details">ইনার কাজ কি আমি নিজেও জানিনা</div>
+            </div>
+           <!-- Member 3 -->
+            <div class="profile-card" onclick="this.classList.toggle('active')">
+                <div class="profile-img-wrapper">
+                    <img src="https://cdn.jsdelivr.net/gh/Robiul3100/img-host@main/images/img_1770128049208.jpg" class="profile-img">
+                </div>
+                <h3 class="profile-name rsf">আবরার ভাই</h3>
+                <p class="profile-role">কহেনের লোক</p>
+                <span class="profile-small"> বিস্তারিত</span>
+                <div class="profile-details">ইনি ইনার গুপ্তচরী বিদ্যা দিয়ে গ্রুপের সকল দুষ্টামি বাহিরে সাপ্লাই করেন</div>
             </div>
              <!-- Member 3 -->
             <div class="profile-card" onclick="this.classList.toggle('active')">
                 <div class="profile-img-wrapper">
                     <img src="https://cdn.jsdelivr.net/gh/Robiul3100/img-host@main/images/img_1770128049208.jpg" class="profile-img">
                 </div>
-                <h3 class="profile-name">নিশা</h3>
+                <h3 class="profile-name rsf">নিশা</h3>
                 <p class="profile-role">ইতরের বান্ধুপি</p>
-                <div class="profile-details">ইনি িনার বান্ধুপির সাথে ইতরামি করেন।</div>
+                <span class="profile-small"> বিস্তারিত</span>
+                <div class="profile-details">ইনি ইনার বান্ধুপির সাথে ইতরামি করেন।</div>
             </div>
              <!-- Member 3 -->
             <div class="profile-card" onclick="this.classList.toggle('active')">
                 <div class="profile-img-wrapper">
                     <img src="https://cdn.jsdelivr.net/gh/Robiul3100/img-host@main/images/img_1770128049208.jpg" class="profile-img">
                 </div>
-                <h3 class="profile-name">রুপালী আপা</h3>
+                <h3 class="profile-name rsf">ইবতেহাজ কায়নাদ</h3>
+                <p class="profile-role">পন্ডিত</p>
+                <span class="profile-small"> বিস্তারিত</span>
+                <div class="profile-details">ইনি যেখানে সেখানে পন্ডিতি করবেনই।</div>
+            </div>
+             <!-- Member 3 -->
+            <div class="profile-card" onclick="this.classList.toggle('active')">
+                <div class="profile-img-wrapper">
+                    <img src="https://cdn.jsdelivr.net/gh/Robiul3100/img-host@main/images/img_1770128049208.jpg" class="profile-img">
+                </div>
+                <h3 class="profile-name rsf">রুপালী আপা</h3>
                 <p class="profile-role">গ্রুপ এডমিন</p>
+                <span class="profile-small"> বিস্তারিত</span>
                 <div class="profile-details">ইনি আসলে কি কাজ করেন, জানিনা।।</div>
             </div>
              <!-- Member 3 -->
@@ -279,8 +386,9 @@
                 <div class="profile-img-wrapper">
                     <img src="https://cdn.jsdelivr.net/gh/Robiul3100/img-host@main/images/img_1770128049208.jpg" class="profile-img">
                 </div>
-                <h3 class="profile-name">মাহদিবা খান মেঘ</h3>
+                <h3 class="profile-name rsf">মাহদিবা খান মেঘ</h3>
                 <p class="profile-role">ভদ্র মহিলা</p>
+                <span class="profile-small"> বিস্তারিত</span>
                 <div class="profile-details">ইনি ইনার পালিত কুমির দিয়ে গ্রুপের সবাইকে ভয় দেখান।</div>
             </div>
         </div>
@@ -290,21 +398,26 @@
         <div class="section-title"><h2>প্রজেক্টস</h2></div>
         <div class="projects-grid">
             <div class="project-card">
-                <div class="project-thumb"><img src="https://placehold.co/600x400/FF9F43/fff?text=Design+1"></div>
+                <div class="project-thumb"><img src="https://cdn.jsdelivr.net/gh/Robiul3100/img-host@main/images/img_1770157877645.webp"></div>
                 <div class="project-body">
-                    <h3>বুক কভার ডিজাইন</h3>
-                    <button class="btn-modal" onclick="openModal('বুক কভার ডিজাইন', 'এটি পদ্মজা উপন্যাসের জন্য তৈরি করা একটি এক্সক্লুসিভ ডিজিটাল আর্ট।', 'https://placehold.co/600x400/FF9F43/fff?text=Design+1')">বিস্তারিত</button>
+                    <h3>ক্যারেক্টার নির্বাচন ২০২৬</h3>
+                    <button class="btn-modal" onclick="openModal('ক্যারেক্টার নির্বাচন', 'এটি পদ্মজা উপন্যাসের নায়ক আমির হাওলাদারকে নিয়ে নির্বাচন।', 'https://cdn.jsdelivr.net/gh/Robiul3100/img-host@main/images/img_1770157877645.webp')">বিস্তারিত</button>
                 </div>
             </div>
             <div class="project-card">
-                <div class="project-thumb"><img src="https://placehold.co/600x400/6C5CE7/fff?text=Event+2"></div>
+                <div class="project-thumb"><img src="https://cdn.jsdelivr.net/gh/Robiul3100/img-host@main/images/img_1770157480537.webp"></div>
                 <div class="project-body">
-                    <h3>সাহিত্য আড্ডা ২০২৪</h3>
-                    <button class="btn-modal" onclick="openModal('সাহিত্য আড্ডা ২০২৪', 'টিমের সকল সদস্যদের নিয়ে আয়োজিত বার্ষিক মিলনমেলা।', 'https://placehold.co/600x400/6C5CE7/fff?text=Event+2')">বিস্তারিত</button>
+                    <h3>কহেন নির্বাচন ২০২৬</h3>
+                    <button class="btn-modal" onclick="openModal('কহেন নির্বাচন ২০২৬', 'গ্রুপের সকল সদস্যদের নিয়ে আয়োজিত বার্ষিক ক্যারেক্টার নির্বাচনা।', 'https://cdn.jsdelivr.net/gh/Robiul3100/img-host@main/images/img_1770157480537.webp')">বিস্তারিত</button>
                 </div>
             </div>
         </div>
     </section>
+
+<div class="native-ad-container">
+<div class="ad-badge">Sponsored</div>
+ <div style="color: white; font-weight:bold;">Tap to support us</div>
+ <div style="font-size:12px; color:#aaa; margin-top:5px;">Secure Downloads</div></div>
 
     <nav class="mobile-nav">
         <a href="#home" class="nav-item active"><i class="fa-solid fa-house"></i></a>
@@ -322,7 +435,7 @@
             <div class="modal-info">
                 <h2 id="modalTitle"></h2>
                 <p id="modalDesc" style="margin: 15px 0; color: var(--text-muted);"></p>
-                <button class="cta-btn" style="width: 100%; justify-content: center;" onclick="closeModal()">বন্ধ করুন</button>
+                <button class="shining-btn" style="width: 100%; justify-content: center;" onclick="closeModal()">বন্ধ করুন</button>
             </div>
         </div>
     </div>
@@ -347,6 +460,13 @@
             document.documentElement.setAttribute('data-theme', dark ? 'dark' : 'light');
             btn.innerHTML = dark ? '<i class="fa-solid fa-sun"></i>' : '<i class="fa-solid fa-moon"></i>';
         };
+        
+        // COUNTER
+const counters=document.querySelectorAll('[data-count]');
+const obs=new IntersectionObserver(entries=>{
+entries.forEach(e=>{if(e.isIntersecting){const el=e.target;let c=0;const t=+el.dataset.count;const i=setInterval(()=>{c+=Math.ceil(t/60);if(c>=t){el.innerText=t;clearInterval(i);}else el.innerText=c;},20);obs.unobserve(el);}})
+});
+counters.forEach(c=>obs.observe(c));
 
         // Scroll Logic
         window.onclick = (e) => { if(e.target.id == 'modal') closeModal(); }
